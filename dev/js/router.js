@@ -9,7 +9,11 @@ const Router = Backbone.Router.extend({
     '':'home'
   },
 
-  home(){
+  defaultRoute() {
+    console.log("default");
+  },
+
+  home() {
     console.log("Hello!!!");
   }
 });
