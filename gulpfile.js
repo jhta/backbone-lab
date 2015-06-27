@@ -2,6 +2,7 @@ var gulp       = require("gulp"),
     source     = require("vinyl-source-stream"),
     browserify = require("browserify"),
     watchify   = require("watchify"),
+    hbsfy      = require("hbsfy"),
     to5ify     = require("6to5ify"),
     concat     = require("gulp-concat"),
     stylus     = require("gulp-stylus"),
@@ -27,8 +28,13 @@ function bundleScripts(watch){
   if(watch) {
     bundler = watchify(bundler);
   }
+  hbsfy.configure({
+    extensions: ['hbs']
+  });
+
   bundler
     .transform(to5ify)
+    .transform(hbsfy)
 
   function rebundle() {
     var stream = bundler.bundle();

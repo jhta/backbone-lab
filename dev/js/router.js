@@ -1,8 +1,11 @@
-const $ = require("jquery")(window),
+const $ = require("jquery"),
       _ = require("underscore"),
-      Backbone = require("backbone"),
-      APP = require("./app");
+      Backbone = require("backbone");
 Backbone.$ = $;
+
+
+const Game  = require("./models/game");
+const GameView = require("./views/gameView");
 
 const Router = Backbone.Router.extend({
   routes: {
@@ -14,7 +17,9 @@ const Router = Backbone.Router.extend({
   },
 
   home() {
-    console.log("Hello!!!");
+    var game = new Game({title: 'God of War'});
+    var gameView = new GameView();
+    gameView.render();
   }
 });
 
