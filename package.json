@@ -25,6 +25,7 @@
     "handlebars": "^3.0.3",
     "hbsfy": "^2.2.1",
     "jquery": "^2.1.4",
+    "materialize-css": "^0.96.1",
     "nib": "^1.1.0",
     "underscore": "^1.8.3",
     "vinyl-source-stream": "^1.1.0",

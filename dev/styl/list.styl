@@ -1,0 +1,46 @@
+$item-height = 84px;
+$image-width = 85px;
+
+.modalList
+  margin: 0.5rem 0 1rem 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+
+  &-item
+    height: $item-height;
+    margin: 0;
+    border-bottom: 1px solid #e0e0e0;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    &:hover
+      background: #eee;
+
+    &__image
+      height: 100%;
+      overflow: hidden;
+      padding: 0;
+      cursor: pointer;
+      width: $image-width;
+
+      img
+        height: 100%;
+        width: 100%;
+
+    &__content
+      margin: 10px;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+
+      &-title
+        font-weight: bold;
+        cursor: pointer;
+
+      &-btn
+        align-self: center;
