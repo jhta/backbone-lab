@@ -5,7 +5,8 @@
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preinstall": "npm install -g gulp browserify"
+    "preinstall": "npm install -g gulp browserify",
+    "start": "gulp dev"
   },
   "author": "jeisonhs93@gmail.com",
   "license": "MIT",
