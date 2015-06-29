@@ -2,12 +2,12 @@ const $ = require("jquery"),
       _ = require("underscore"),
       Backbone = require("backbone");
 Backbone.$ = $;
-const template = require("../templates/game.hbs");
+const template = require("../templates/currentGame.hbs");
 
 
-const GameView = Backbone.View.extend({
-  tagName: 'div',
-  className: "col s12 m6 l4",
+const CurrentGameView = Backbone.View.extend({
+  tagName: 'li',
+  className: "modalList-item",
   template: template,
 
   initialize() {
@@ -22,4 +22,4 @@ const GameView = Backbone.View.extend({
   }
 });
 
-module.exports = GameView;
+module.exports = CurrentGameView;

@@ -4,12 +4,37 @@ const $ = require("jquery"),
 Backbone.$ = $;
 
 
+
+const testGames = require('./objectExample');
+
+
+//Models
 const Game  = require("./models/game");
-const GameView = require("./views/gameView");
+
+
+//Views
+const GamesListView   = require("./views/gamesListView");
+const CurrentListView = require("./views/currentListView");
+
+//Collections
+const Games        = require("./collections/games");
+const CurrentGames = require("./collections/currentGames");
+
 
 const Router = Backbone.Router.extend({
+
   routes: {
-    '':'home'
+    '':'home',
+    'current':'currentGames'
+  },
+
+  initialize() {
+    let gamesCollection = new Games(testGames);
+    let gamesListView = new GamesListView({collection: gamesCollection});
+
+    let currentGamesCollection = new CurrentGames(testGames);
+    let currentListView = new CurrentListView({collection: currentGamesCollection});
+
   },
 
   defaultRoute() {
@@ -17,9 +42,11 @@ const Router = Backbone.Router.extend({
   },
 
   home() {
-    var game = new Game({title: 'God of War'});
-    var gameView = new GameView();
-    gameView.render();
+
+  },
+
+  currentGames() {
+    //$("#current-list-modal").openModal();
   }
 });
 

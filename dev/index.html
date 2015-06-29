@@ -13,21 +13,8 @@
 
   <!-- NAV HEADER
     ************** -->
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Games</a>
-      <ul  class="right hide-on-med-and-down">
-        <li><a href="badges.html">My Games</a></li>
-        <li><a class="modal-trigger" href="#modal1">Current</a></li>
-      </ul>
+  <nav id="nav">
 
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="badges.html">My Games</a></li>
-        <li><a class="modal-trigger" href="#modal1">Current</a></li>
-      </ul>
-
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
   </nav>
 
 
@@ -37,7 +24,7 @@
   <section class="container">
     <div class="row">
 
-      <div class="col s12">
+      <div class="col s12" id="search-input">
         <div class="card-panel">
           <div class="input-field ">
             <input placeholder="search by name" type="text" class="validate">
@@ -45,60 +32,10 @@
           </div>
         </div>
       </div>
-      <div class="col s12 m6 l4">
-        <div class="game medium card">
-           <div class="card-image game__image waves-effect waves-block waves-light">
-             <img class="activator" src="http://images.pushsquare.com/games/ps4/witcher_3_wild_hunt/cover_large.jpg">
-           </div>
-           <div class="card-content">
-             <span class="card-title activator grey-text text-darken-4">The Witcher 3: Wild Hunt</i></span>
 
-           </div>
-           <div class="card-reveal">
-             <span class="card-title grey-text text-darken-4">Card Titleclose</i></span>
-             <p>Here is some more information about this product that is only revealed once clicked on.</p>
-             <a class="waves-effect waves-light btn">Add</a>
-             <a class="waves-effect waves-light btn">Custom</a>
-           </div>
-         </div>
-      </div>
-
-
-      <div class="col s12 m6 l4">
-        <div class=" game medium card">
-           <div class="card-image game__image  waves-effect waves-block waves-light">
-             <img class="activator" src="http://media.ign.com/games/image/object/886/886158/God-of-War-III_US_ESRB.jpg">
-           </div>
-           <div class="card-content">
-             <span class="card-title activator grey-text text-darken-4">God Of War 3</span>
-           </div>
-           <div class="card-reveal">
-             <span class="card-title grey-text text-darken-4">Card Titleclose</i></span>
-             <p>Here is some more information about this product that is only revealed once clicked on.</p>
-           </div>
-         </div>
-      </div>
-
-
-      <div class="col s12 m6 l4">
-        <div class="game medium card">
-           <div class="card-image game__image  waves-effect waves-block waves-light">
-             <img class="activator" src="https://upload.wikimedia.org/wikipedia/en/2/25/Half-Life_2_cover.jpg">
-           </div>
-           <div class="card-content">
-             <span class="card-title activator grey-text text-darken-4">Half Life 2</i></span>
-           </div>
-           <div class="card-reveal">
-             <span class="card-title grey-text text-darken-4">Card Titleclose</i></span>
-             <p>Here is some more information about this product that is only revealed once clicked on.</p>
-           </div>
-         </div>
-      </div>
-
-
+      <div id="games"></div>
 
     </div>
-
 
   </section>
 
@@ -106,63 +43,13 @@
 
     <!-- MODAL FOOTER
     **********************-->
-  <div id="modal1" class="modal bottom-sheet">
+  <div id="current-list-modal" class="modal bottom-sheet">
     <div class="modal-content">
       <h4>Current Games</h4>
-      <ul class="modalList">
-        <li class="modalList-item">
-          <a class="modal-trigger modalList-item__image" href="#modal2">
-            <img src="http://www.ffshrine.org/ff7/coverscans/ff7_us.jpg" alt="" class="" />
-          </a>
-          <div class="modalList-item__content">
-            <div class="left">
-              <span class="modalList-item__content-title">Final Fantasy VII</span>
-              <p>short description..
-              </p>
-            </div>
 
-            <a class="tooltipped modalList-item__content-btn btn-floating waves-effect waves-light "  data-position="top" data-delay="50" data-tooltip="finished?">
-              <i class="material-icons">add</i>
-            </a>
-
-          </div>
-        </li>
-
-        <li class="modalList-item">
-          <img src="http://www.hardcoregamer.com/wp-content/uploads/2015/04/the-last-of-us-box-art.jpg" alt="" class="modalList-item__image" />
-          <div class="modalList-item__content">
-          <span class="modalList-item__content-title">Title</span>
-          <p>First Line <br>
-             Second Line
-          </p>
-          <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-
-          </div>
-        </li>
-        <li class="modalList-item">
-          <img src="http://vignette4.wikia.nocookie.net/t__/images/3/3a/Shadow_and_the_Colossus_NTSC-U_Cover.jpg/revision/latest?cb=20130712213544&path-prefix=teamico" alt="" class="modalList-item__image" />
-          <div class="modalList-item__content">
-          <span class="title">Title</span>
-          <p>First Line <br>
-             Second Line
-          </p>
-          <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-
-          </div>
-        </li>
-        <li class="modalList-item">
-          <img src="http://s.pro-gmedia.com/videogamer/media/images/pub/large/fifa_151.jpg" alt="" class="modalList-item__image" />
-          <div class="modalList-item__content">
-          <span class="title">Title</span>
-          <p>First Line <br>
-             Second Line
-          </p>
-          <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-
-          </div>
-        </li>
-
+      <ul class="modalList" id="current-games">
       </ul>
+
     </div>
     <div class="modal-footer">
       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
