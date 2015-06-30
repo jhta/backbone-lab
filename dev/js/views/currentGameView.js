@@ -5,7 +5,6 @@ const $ = require("jquery"),
 Backbone.$ = $;
 const template = require("../templates/currentGame.hbs");
 
-
 const CurrentGameView = Backbone.View.extend({
   tagName: 'li',
   className: "modalList-item",
@@ -51,6 +50,7 @@ const CurrentGameView = Backbone.View.extend({
   },
 
   showDescription() {
+    showModal();
     window.APP.Models.gameDescription.set(this.model.toJSON());
     window.APP.Views.gameDescription.render();
 

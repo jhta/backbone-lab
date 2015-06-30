@@ -40,6 +40,7 @@ const Router = Backbone.Router.extend({
 
     window.APP.Models.gameDescription = new Game();
     window.APP.Views.gameDescription = new GameDescription({model: window.APP.Models.gameDescription});
+    window.APP.Views.gameDescription.render();
   },
 
   home() {

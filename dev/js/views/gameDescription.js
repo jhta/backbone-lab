@@ -16,9 +16,7 @@ const GameDescription = Backbone.View.extend({
   },
 
   render() {
-    console.log("render!!!");
     //this.model.attributes
-    console.log(this.model.toJSON().platforms)
     let html = template(this.model.toJSON());
     this.$el.html(html);
   }
