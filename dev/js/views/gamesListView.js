@@ -21,6 +21,7 @@ const GamesListView = Backbone.View.extend({
   },
 
   addGame(game) {
+    game.set({current: true, finished: false});
     let gameView = new GameView({model: game});
     this.$el.append(gameView.render().el);
   },

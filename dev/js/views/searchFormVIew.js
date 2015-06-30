@@ -35,10 +35,14 @@ const SearchFormView = Backbone.View.extend({
     if(e.keyCode === 13) {
       let gameInputDOM = $("#search-game");
       console.log("searching...");
+      $("#preloader").addClass("active");
+      $("#games").empty();
       API.getDataByName(gameInputDOM.val(), (err, data)=>{
         if(err) {
           console.log("error");
         } else {
+          $("#preloader").removeClass("active");
+
           let gamesCollection = new Games(data);
           let gamesListView = new GamesListView({collection: gamesCollection});
         }

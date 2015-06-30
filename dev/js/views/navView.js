@@ -26,7 +26,6 @@ const NavView = Backbone.View.extend({
   },
 
   showCurrentList() {
-    console.log("...");
     if(window.APP.router){
       window.APP.router.navigate("current", {trigger: true});
       console.log("ok!!");

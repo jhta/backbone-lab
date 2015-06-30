@@ -5,9 +5,7 @@ Backbone.$ = $;
 
 
 const Game = Backbone.Model.extend({
-  test(){
-    console.log("hi!!");
-  }
+  
 });
 
 

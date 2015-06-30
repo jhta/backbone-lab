@@ -14,7 +14,11 @@ const searchView = new  SearchView();
 
 
 
-window.APP = {}
+window.APP = {
+  Views: {},
+  Collections: {},
+  Models: {} 
+}
 const router = new Router();
 
 window.APP.router = router || null;
