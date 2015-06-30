@@ -21,12 +21,20 @@ const GameView = Backbone.View.extend({
   },
 
   addToCurrentList() {
+    if(window.APP.router){
+      window.APP.router.navigate("history", {trigger: true});
+    }
+
     this.model.set({finished: false, current: true});
 
     window.APP.Collections.currentGames.add(this.model);
   },
 
   addToHistory() {
+    if(window.APP.router){
+      window.APP.router.navigate("history", {trigger: true});
+    }
+
     this.model.set({finished: false, current: false});
     window.APP.Collections.currentGames.add(this.model);
 
