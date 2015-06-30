@@ -8,7 +8,6 @@ const template = require("../templates/search.hbs");
 
 const GamesListView   = require("./gamesListView");
 const Games           = require("../collections/games");
-const ObjectExample2  = require("../objectExample2");
 
 const SearchFormView = Backbone.View.extend({
 
