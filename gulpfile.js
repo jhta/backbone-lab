@@ -82,15 +82,6 @@ gulp.task('stylus', function() {
 });
 
 
-/**
- * COPY TASK
- * ************
- * Copy index to 'dist' folder
- */
-gulp.task("copy", function() {
-  gulp.src('dev/index.html')
-    .pipe(gulp.dest("dist"))
-});
 
 
 /**
@@ -112,12 +103,29 @@ gulp.task('server', function() {
 
 
 
-gulp.task('watch', function() {
+/**
+ * HTML TASK
+ * ************
+ */
+
+gulp.task('html', function(){
+	gulp.src('dev/index.html')
+	.pipe(htmlmin({
+		collapseWhitespace: true,
+		removeComments: true,
+		minifyURLs: true,
+		minifyJS: true
+		}))
+	.pipe(gulp.dest('dist'));
+	});
+
+
   bundleScripts(true);
+gulp.task('watch', function() {
   gulp.watch('dev/styl/**/*.styl', ['stylus']);
-  gulp.watch('dev/**/*.html', ['copy']);
+  gulp.watch('dev/**/*.html', ['html']);
 })
 
 
-gulp.task('build', ['stylus', 'copy', 'browserify']);
+gulp.task('build', ['stylus', 'html', 'browserify']);
 gulp.task('dev', ['build', 'server', 'watch']);
