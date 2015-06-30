@@ -50,7 +50,6 @@ const CurrentGameView = Backbone.View.extend({
   },
 
   showDescription() {
-    showModal();
     window.APP.Models.gameDescription.set(this.model.toJSON());
     window.APP.Views.gameDescription.render();
 
