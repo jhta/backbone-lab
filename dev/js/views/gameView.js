@@ -12,7 +12,7 @@ const GameView = Backbone.View.extend({
 
   events: {
     'click .add-current': 'addToCurrentList',
-    'click .add-game': 'addToMyList'
+    'click .add-game': 'addToHistory'
   },
 
   initialize() {
@@ -21,11 +21,14 @@ const GameView = Backbone.View.extend({
   },
 
   addToCurrentList() {
+    this.model.set({finished: false, current: true});
+
     window.APP.Collections.currentGames.add(this.model);
-    let name = this.model.get("title");
   },
 
-  addToMyList() {
+  addToHistory() {
+    this.model.set({finished: false, current: false});
+    window.APP.Collections.currentGames.add(this.model);
 
   },
 

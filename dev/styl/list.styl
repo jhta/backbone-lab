@@ -19,6 +19,10 @@ $image-width = 85px;
     align-items: center;
     width: 100%;
 
+    &.completed
+      background: $primary-color-light;
+
+
     &:hover
       background: #eee;
 
@@ -43,5 +47,25 @@ $image-width = 85px;
         font-weight: bold;
         cursor: pointer;
 
+      &-description
+        margin: 0;
+
+      &-completed
+        color: $accent-color;
+
+      &-pending
+        color: red;
+
+
       &-btn
         align-self: center;
+
+
+@media screen  and (max-device-width: 736px)
+
+  .modalList-item
+
+    &__content
+
+      &-description
+        display: none;

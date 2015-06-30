@@ -11,7 +11,7 @@ const GamesListView = Backbone.View.extend({
 
   initialize() {
     this.render();
-    //this.listenTo(this.model, "change", this.render, this);
+    this.listenTo(this.model, "change", this.render, this);
     this.listenTo(this.collection, "add", this.addGame, this);
     this.listenTo(this.collection, "reset", this.render, this);
   },

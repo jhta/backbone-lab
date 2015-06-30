@@ -12,7 +12,8 @@ const NavView = Backbone.View.extend({
   template: template,
 
   events: {
-    'click .current-list-trigger': 'showCurrentList'
+    'click .current-list-trigger': 'showCurrentList',
+    'click .history-list-trigger': 'showHistoryList'
   },
 
   initialize() {
@@ -28,9 +29,16 @@ const NavView = Backbone.View.extend({
   showCurrentList() {
     if(window.APP.router){
       window.APP.router.navigate("current", {trigger: true});
-      console.log("ok!!");
+    }
+  },
+
+  showHistoryList() {
+    if(window.APP.router){
+      window.APP.router.navigate("history", {trigger: true});
     }
   }
+
+
 });
 
 module.exports = NavView;

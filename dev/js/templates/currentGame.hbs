@@ -1,17 +1,34 @@
-<li class="modalList-item">
+<li class="modalList-item {{#if finished}}completed{{/if}}">
   <a class="modal-trigger modalList-item__image show-description" href="#modal-description">
     <img src="{{thumb}}" alt="" class="" />
   </a>
   <div class="modalList-item__content">
-    <div class="left">
+    <div class="u-fullWidth">
       <span class="modalList-item__content-title">{{title}}</span>
-      <p>{{short_description}}
+      {{#if finished}}
+        <span class="modalList-item__content-completed">(completed)</span>
+      {{else}}
+        {{#if current}}
+          <span class="modalList-item__content-completed">(current)</span>
+        {{else}}
+        <span class="modalList-item__content-pending">(pending)</span>
+        {{/if}}
+      {{/if}}
+
+      <p class="modalList-item__content-description">{{short_description}}
       </p>
     </div>
-
-    <a class="tooltipped modalList-item__content-btn btn-floating waves-effect waves-light finished"  data-position="top" data-delay="50" data-tooltip="finished?">
-      <i class="material-icons">done</i>
-    </a>
+    {{#if current}}
+      <a class="tooltipped modalList-item__content-btn btn-floating waves-effect waves-light finished"  data-position="top" data-delay="50" data-tooltip="finished?">
+        <i class="material-icons">done</i>
+      </a>
+    {{else}}
+      {{#unless finished}}
+      <a class="tooltipped modalList-item__content-btn btn-floating waves-effect waves-light pending red"  data-position="top" data-delay="50" data-tooltip="finished?">
+        <i class="material-icons">play_arrow</i>
+      </a>
+      {{/unless}}
+    {{/if}}
 
   </div>
 </li>

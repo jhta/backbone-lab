@@ -34,7 +34,6 @@ const SearchFormView = Backbone.View.extend({
   searchGame(e) {
     if(e.keyCode === 13) {
       let gameInputDOM = $("#search-game");
-      console.log("searching...");
       $("#preloader").addClass("active");
       $("#games").empty();
       API.getDataByName(gameInputDOM.val(), (err, data)=>{
